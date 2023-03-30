@@ -15,39 +15,48 @@
       background-color: #fafafa;
       margin: 0;
       font-family: Arial, sans-serif;
-      max-width: 800px;
-    }
-
-    .content-wrapper {
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      justify-content: center;
+      max-width: 100%;
     }
 
 
     .container {
-      display: inline-flex;
       text-align: center;
-      width: 50%;
-      height: auto;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      margin-top: 10%;
+      width: 60%;
     }
+
+
+    .description-box {
+        background-color: #fafafa;
+        padding: 1em;
+        border: 1px solid #000;
+        border-radius: 4px;
+        width: 50%;
+        max-width: 300px;
+        text-align: left;
+        overflow-y: scroll; /* Add this line to enable vertical scrolling */
+        max-height: 150px; /* Add this line to set a maximum height for the box */
+        vertical-align: middle;
+        opacity: 1; /* Change this from 0 to 1 */
+        transform: translateY(0); /* Change this from -30px to 0 */
+        transition: opacity 1s, transform 1s;
+        cursor: pointer;
+        position: relative;
+    }
+
+
 
     .art-piece img {
       display: inline-block;
       max-width: 100%;
       vertical-align: middle;
+      width: 100%;
+      height: auto;
     }
 
-    .description-box {
-      display: inline-block;
-      width: 50%;
-      max-width: 300px;
-      vertical-align: middle;
-      opacity: 1; /* Change this from 0 to 1 */
-      transform: translateY(75px); /* Change this from -30px to 0 */
-      transition: opacity 1s, transform 1s;
-    }
 
 
     .art-piece:hover ~ .description-box {
@@ -56,37 +65,17 @@
     }
 
 
-    .art-container {
+    .art-piece {
       display: flex;
-      box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+      box-shadow: -10px 0 20px rgba(0, 0, 0, 0.69);
       border: 5px solid black;
       padding: 10px;
       background-color: white;
-      height: auto;
+      width: 75%;
+      margin-bottom: 1em;
+      justify-self: center;
     }
 
-    .art-image {
-      display: block;
-      max-width: 100%;
-      height: auto;
-    }
-
-    .description-box {
-      cursor: pointer;
-      position: relative;
-      background-color: #fafafa;
-      padding: 1em;
-      border: 1px solid #000000;
-      border-radius: 4px;
-    }
-
-    .description-box {
-      background-color: #fafafa;
-      padding: 1em;
-      border: 1px solid #000;
-      border-radius: 4px;
-      margin-left: 4em;
-    }
 
     .description-box:hover {
       background-color: #fafafa;
@@ -120,26 +109,18 @@
 </script>
 </head>
 <body>
-
-<div class="content-wrapper">
+ 
   <div class="container">
-    <div class="art-container">
-      <div class="art-piece">
-        <img src="Images/bandit-punk.png" alt="Artwork" class="art-image"> 
-          <div class="description-box" onclick="toggleDescription()">
-            <div class="description-text">
-              <h3>Description</h3>
-              <p>
-              This is the description of the art piece. You can replace this text with
-              the actual description of your artwork. When the description box is clicked,
-              it will expand to display the full description.
-              </p>
-            </div>
-          </div>
-      </div>
+    <div class="art-piece">
+        <img src="Images/bandit-punk.png" alt="Art piece">
     </div>
-  </div>
+    <div class="description-box">
+        <p>
+            This is a sample description text for the Bandit Punk project. You can modify this text to provide a brief introduction and any relevant information about your project. If the text is long enough, it will become scrollable within this box.
+        </p>
+    </div>
 </div>
+
 
 </body>
 </html>
